@@ -8,6 +8,9 @@ import dotenv from "dotenv"
 import cookieParser from "cookie-parser"
 import cors from 'cors'
 import passport from './src/config/passport.js'
+import path from "path"
+
+
 
 // file importing 
 import auth from "./src/routes/auth.routes.js"
@@ -30,6 +33,7 @@ app.use(passport.initialize())
 app.use(cors({ origin: "http://localhost:5173", credentials: true }))
 app.use(attachUser)
 
+app.use(express.static(path.join(__dirname, "./public")))
 
 // api
 app.use("/auth", auth)
@@ -38,6 +42,11 @@ app.get("/:id", redirectFromShortUrl)
 
 import { errorHandler } from "./src/utils/Error.handling.js"
 app.use(errorHandler)
+
+
+app.get("*name", (req, res) => {
+    res.sendFile(path.join(_dirname, "./public/index.html"))
+})
 
 // Serever starting
 app.listen(3000, () => {

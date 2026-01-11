@@ -84,7 +84,7 @@ const Register = ({ onSuccess }) => {
       <div className="pt-4 flex items-center justify-between gap-4">
         <button
           type="button"
-          onClick={() => window.location.href = 'http://localhost:3000/auth/google'}
+          onClick={() => window.location.href = 'https://url-shortner-x857.onrender.com/auth/google'}
           className="flex-1 px-6 py-3.5 rounded-full border border-[#373737]/10 hover:bg-white/50 flex items-center justify-center gap-2 transition-all group cursor-pointer"
         >
           <svg className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
