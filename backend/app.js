@@ -9,6 +9,11 @@ import cookieParser from "cookie-parser"
 import cors from 'cors'
 import passport from './src/config/passport.js'
 import path from "path"
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 
 
