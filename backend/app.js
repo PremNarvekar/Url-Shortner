@@ -33,7 +33,7 @@ app.use(passport.initialize())
 app.use(cors({ origin: "http://localhost:5173", credentials: true }))
 app.use(attachUser)
 
-app.use(express.static(path.join(__dirname, "./public")))
+app.use(express.static(path.join(__dirname, "../public")))
 
 // api
 app.use("/auth", auth)
@@ -45,7 +45,7 @@ app.use(errorHandler)
 
 
 app.get("*name", (req, res) => {
-    res.sendFile(path.join(_dirname, "./public/index.html"))
+    res.sendFile(path.join(_dirname, "../public/index.html"))
 })
 
 // Serever starting
